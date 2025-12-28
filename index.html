@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    E-commerce Customer Dataset - Demo Page
+    Author: RSK World
+    Website: https://rskworld.in
+    Email: help@rskworld.in
+    Phone: +91 93305 39277
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Customer Dataset - RSK World</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffc107;
+            --secondary-color: #212529;
+            --accent-color: #17a2b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .navbar {
+            background: rgba(33, 37, 41, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 50px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 20px;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            transition: transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            background: rgba(33, 37, 41, 0.95);
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        .tech-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        .dataset-preview {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        table {
+            font-size: 0.9rem;
+        }
+        .table thead {
+            background: #f8f9fa;
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-table"></i> E-commerce Customer Dataset
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#enhanced-features">Enhanced</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#dataset">Dataset</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#analysis">Analysis</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">
+                <i class="fas fa-table text-warning"></i> E-commerce Customer Dataset
+            </h1>
+            <p class="lead mb-4">
+                Comprehensive customer behavior dataset with <strong>40 unique features</strong> including purchase history, 
+                browsing patterns, customer lifetime value, loyalty tiers, payment methods, social engagement, 
+                and customer segmentation labels for advanced marketing analytics
+            </p>
+            <div class="mt-4">
+                <span class="badge bg-warning text-dark me-2">Intermediate</span>
+                <span class="badge bg-info me-2">40 Features</span>
+                <span class="badge bg-success me-2">Enhanced Dataset</span>
+                <span class="badge bg-danger">Ready for ML</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="container mb-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-info-circle"></i> Dataset Overview</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            This dataset contains customer purchase history, browsing behavior, product preferences, 
+                            and customer segmentation labels. Perfect for customer segmentation, recommendation systems, 
+                            and marketing analytics.
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <div class="stat-number">100</div>
+                                    <div class="text-muted">Customers</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <div class="stat-number">40</div>
+                                    <div class="text-muted">Features</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <div class="stat-number">3</div>
+                                    <div class="text-muted">Segments</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stat-card">
+                                    <div class="stat-number">6</div>
+                                    <div class="text-muted">Categories</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container mb-5">
+        <h2 class="text-center mb-4 text-white"><i class="fas fa-star"></i> Key Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shopping-cart feature-icon"></i>
+                        <h5>Purchase History</h5>
+                        <p>Complete purchase records including frequency, order values, and total purchases</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mouse feature-icon"></i>
+                        <h5>Browsing Patterns</h5>
+                        <p>Detailed browsing behavior data including time spent and device preferences</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tags feature-icon"></i>
+                        <h5>Product Preferences</h5>
+                        <p>Customer preferences for different product categories and device types</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users feature-icon"></i>
+                        <h5>Customer Segments</h5>
+                        <p>Pre-labeled customer segments (High Value, Medium Value, Low Value)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-project-diagram feature-icon"></i>
+                        <h5>Ready for Clustering</h5>
+                        <p>Optimized for clustering models and machine learning algorithms</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h5>Marketing Analytics</h5>
+                        <p>Perfect for customer lifetime value, churn prediction, and targeting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Features Section -->
+    <section id="enhanced-features" class="container mb-5">
+        <h2 class="text-center mb-4 text-white"><i class="fas fa-star"></i> Enhanced Unique Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-dollar-sign text-success"></i> Customer Lifetime Value</h5>
+                        <p>Calculated CLV for each customer based on purchase history</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-credit-card text-primary"></i> Payment Methods</h5>
+                        <p>6 different payment method preferences (Credit, Debit, PayPal, etc.)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-trophy text-warning"></i> Loyalty Tiers</h5>
+                        <p>5-tier loyalty program (Bronze, Silver, Gold, Platinum, Diamond)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-envelope text-info"></i> Email Marketing</h5>
+                        <p>Email open rates, click-through rates, and newsletter subscription status</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-share-alt text-danger"></i> Social Media</h5>
+                        <p>Social media engagement scores and social shares count</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-star text-warning"></i> Customer Satisfaction</h5>
+                        <p>Customer satisfaction scores and average review ratings</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-map-marker-alt text-success"></i> Geographic Data</h5>
+                        <p>5 geographic regions (North, South, East, West, Central)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-mobile-alt text-primary"></i> Mobile App Usage</h5>
+                        <p>Mobile app user identification and app engagement metrics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-shopping-cart text-danger"></i> Cart Behavior</h5>
+                        <p>Cart abandonment rates and shopping behavior patterns</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-tag text-info"></i> Discount Usage</h5>
+                        <p>Discount usage percentage and coupon redemption counts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-user-friends text-success"></i> Referral Sources</h5>
+                        <p>7 different referral sources (Google, Social Media, Email, etc.)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-heart text-danger"></i> Wishlist Items</h5>
+                        <p>Wishlist item counts for each customer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-clock text-primary"></i> Shopping Hours</h5>
+                        <p>Preferred shopping hours and session duration data</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-box text-warning"></i> Shipping Preferences</h5>
+                        <p>Preferred shipping methods (Standard, Express, Overnight, Same Day)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-redo text-info"></i> Return Rates</h5>
+                        <p>Product return rates and customer support interactions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-layer-group text-success"></i> Cross-Category</h5>
+                        <p>Cross-category purchase counts and repeat purchase rates</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-comments text-primary"></i> Reviews & Support</h5>
+                        <p>Product review counts and customer support interaction history</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-calendar-alt text-danger"></i> Customer Tenure</h5>
+                        <p>Customer since (months) and customer retention metrics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-chart-bar text-warning"></i> Session Analytics</h5>
+                        <p>Average session duration and pages per session metrics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="container mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fas fa-tools"></i> Technologies Used</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                    <span class="tech-badge"><i class="fab fa-python"></i> CSV</span>
+                    <span class="tech-badge"><i class="fas fa-database"></i> SQL</span>
+                    <span class="tech-badge"><i class="fab fa-python"></i> Pandas</span>
+                    <span class="tech-badge"><i class="fas fa-calculator"></i> NumPy</span>
+                    <span class="tech-badge"><i class="fas fa-chart-bar"></i> Matplotlib</span>
+                    <span class="tech-badge"><i class="fas fa-brain"></i> Scikit-learn</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Preview Section -->
+    <section id="dataset" class="container mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fas fa-table"></i> Dataset Preview</h3>
+            </div>
+            <div class="card-body">
+                <div class="dataset-preview">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Annual Income</th>
+                                <th>Spending Score</th>
+                                <th>Purchase Freq</th>
+                                <th>Avg Order Value</th>
+                                <th>Category</th>
+                                <th>Device</th>
+                                <th>Segment</th>
+                            </tr>
+                        </thead>
+                        <tbody id="datasetTable">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3 text-center">
+                    <a href="ecommerce_customers.csv" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download Full Dataset (CSV)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="container mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fas fa-chart-bar"></i> Analysis Scripts</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-file-code text-primary"></i> analyze_customers.py</h5>
+                                <p>Comprehensive data analysis including exploratory data analysis, 
+                                customer segmentation, purchasing behavior, and product preferences.</p>
+                                <code>python analyze_customers.py</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-project-diagram text-success"></i> customer_segmentation.py</h5>
+                                <p>Advanced customer segmentation using K-Means, DBSCAN, and 
+                                Hierarchical Clustering algorithms.</p>
+                                <code>python customer_segmentation.py</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5><i class="fas fa-database text-info"></i> queries.sql</h5>
+                                <p>25+ SQL queries for data analysis including segmentation, 
+                                gender analysis, product preferences, device analysis, and advanced analytics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-table"></i> E-commerce Customer Dataset</h5>
+                    <p>Comprehensive customer behavior dataset for marketing analytics and machine learning.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Contact</h5>
+                    <p>
+                        <i class="fas fa-globe"></i> <a href="https://rskworld.in" class="text-white">rskworld.in</a><br>
+                        <i class="fas fa-envelope"></i> <a href="mailto:help@rskworld.in" class="text-white">help@rskworld.in</a><br>
+                        <i class="fas fa-phone"></i> +91 93305 39277
+                    </p>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2026 RSK World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load and display dataset preview
+        async function loadDatasetPreview() {
+            try {
+                const response = await fetch('ecommerce_customers.csv');
+                const text = await response.text();
+                const lines = text.split('\n').slice(1, 11); // First 10 data rows
+                const tbody = document.getElementById('datasetTable');
+                
+                // Parse CSV header to get column indices
+                const headerLine = text.split('\n')[0];
+                const headers = headerLine.split(',');
+                const colIndices = {
+                    id: headers.indexOf('customer_id'),
+                    age: headers.indexOf('age'),
+                    gender: headers.indexOf('gender'),
+                    income: headers.indexOf('annual_income'),
+                    spending: headers.indexOf('spending_score'),
+                    freq: headers.indexOf('purchase_frequency'),
+                    aov: headers.indexOf('avg_order_value'),
+                    category: headers.indexOf('product_category_preference'),
+                    device: headers.indexOf('device_type'),
+                    segment: headers.indexOf('segment')
+                };
+                
+                lines.forEach(line => {
+                    if (line.trim()) {
+                        const cols = line.split(',');
+                        if (cols.length >= 13) {
+                            const row = document.createElement('tr');
+                            const segment = cols[colIndices.segment] || '';
+                            const segmentClass = segment.includes('High') ? 'success' : 
+                                               segment.includes('Medium') ? 'warning' : 'secondary';
+                            row.innerHTML = `
+                                <td>${cols[colIndices.id] || ''}</td>
+                                <td>${cols[colIndices.age] || ''}</td>
+                                <td>${cols[colIndices.gender] || ''}</td>
+                                <td>$${parseInt(cols[colIndices.income] || 0).toLocaleString()}</td>
+                                <td>${cols[colIndices.spending] || ''}</td>
+                                <td>${cols[colIndices.freq] || ''}</td>
+                                <td>$${parseFloat(cols[colIndices.aov] || 0).toFixed(2)}</td>
+                                <td>${cols[colIndices.category] || ''}</td>
+                                <td>${cols[colIndices.device] || ''}</td>
+                                <td><span class="badge bg-${segmentClass}">${segment}</span></td>
+                            `;
+                            tbody.appendChild(row);
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading dataset:', error);
+                document.getElementById('datasetTable').innerHTML = 
+                    '<tr><td colspan="10" class="text-center">Dataset preview will be available after loading the CSV file.</td></tr>';
+            }
+        }
+        
+        // Load dataset on page load
+        loadDatasetPreview();
+    </script>
+</body>
+</html>
+
